@@ -1,0 +1,101 @@
+.home {
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7)), url(https://source.unsplash.com/nYgy58eb9aw/) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 2rem;
+}
+
+.home h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 .1rem .3rem #000;
+    width: 700px;
+}
+
+.home form {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    width: 55rem;
+    border-radius: 5rem;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+.home form #home-search {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.home form label {
+    font-size: 2.5rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.home form label:hover {
+    color: var(--pink);
+}
+
+.home .suggestion {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.home .suggestion li {
+    color: #eee;
+    margin: .2rem .5rem;
+    font-size: 1rem;
+}
+
+.home .suggestion li a {
+    color: #ccc;
+}
+
+.home .suggestion li a:hover {
+    color: var(--pink);
+}
+
+.service-btn {
+    margin-top: 5rem;
+    padding: 1rem;
+}
+
+.service-btn a {
+    padding: 1rem;
+}
+
+@media (max-width:500px) {
+    .home h1 {
+        font-size: 3rem;
+        width: 99%;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .service-btn {
+        margin-top: 3rem;
+        padding: 1rem;
+    }
+    .home {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 6rem;
+        min-height: 60vh;
+    }
+}

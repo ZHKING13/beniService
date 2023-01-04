@@ -1,0 +1,40 @@
+.footer {
+    /* color: white; */
+    margin-top: 2rem;
+    padding: 2rem 5%;
+    height: 18rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.footer .box-containe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .box-containe .boxs h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.footer .box-containe .boxs a {
+    display: block;
+    font-size: 1.3rem;
+    padding: 0.3rem 0;
+}
+
+.footer .box-containe .boxs a i {
+    padding-right: .3rem;
+    transition: .2s linear;
+}
+
+.footer .box-containe .boxs a:hover i {
+    padding-right: 1rem;
+}
+
+@media(max-width:500px) {
+    .footer .container-box {
+        justify-content: space-between;
+    }
+}

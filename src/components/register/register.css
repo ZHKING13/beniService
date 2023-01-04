@@ -1,0 +1,91 @@
+.register {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to right, #d6f041 50%, rgb(83, 70, 199)50%);
+}
+
+.register-container {
+  height: 65vh;
+  width: 80%;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.register-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+span {
+  margin-top: 2.4rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 2rem;
+  width: 50rem;
+  height: 100%;
+  box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+  flex-direction: column;
+}
+
+.right form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.email,
+#paswd,
+#username,#pass {
+  display: block;
+  margin: 2px;
+  width: 80%;
+  height: 3rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  padding: 0.2em 1rem;
+}
+
+.email,
+#username,
+#pass
+#paswd:hover {
+  outline: none;
+  border: none;
+}
+
+label {
+  font-size: small;
+  display: block;
+  margin: auto;
+  text-align: left;
+  color: gray;
+  width: 70%;
+}
+
+#button {
+  width: 35%;
+  height: 2.5rem;
+  align-self: center;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: .5rem;
+  font-weight: 500;
+  color: white;
+  background: rgb(16, 18, 148);
+  transition: all 0.3 ease;
+}
+
+#button:hover {
+  box-shadow: 0.5rem 0.5rem 2px -1px rgb(235, 235, 49);
+}
