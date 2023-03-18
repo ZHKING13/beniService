@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Etape2 from "../../components/userdetail/Etape2";
 import UserDetail from "../../components/userdetail/UserDetail";
+import Succes from "../Succes";
 
 class Extrait extends Component {
     state = {
@@ -15,7 +16,7 @@ class Extrait extends Component {
         email: "",
         nmbreCopie: "",
         lieu_Livraison: "",
-        date_naissance:'',
+        date_naissance: "",
     };
 
     prevStep = () => {
@@ -44,7 +45,7 @@ class Extrait extends Component {
             nmbreCopie,
             numero_Acte_naissance,
             date_naissance,
-            lieu_naissance
+            lieu_naissance,
         } = this.state;
         const values = {
             nom,
@@ -57,7 +58,7 @@ class Extrait extends Component {
             nmbreCopie,
             numero_Acte_naissance,
             date_naissance,
-            lieu_naissance
+            lieu_naissance,
         };
         switch (step) {
             case 1:
@@ -77,6 +78,8 @@ class Extrait extends Component {
                         value={values}
                     />
                 );
+            case 3:
+                return (<Succes />)
 
             default:
                 break;

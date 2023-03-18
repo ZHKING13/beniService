@@ -3,6 +3,7 @@ import CasierEtape1 from "./CasierEtape1";
 import CasierEtape2 from "./CasierEtape2";
 import axios from "axios";
 import CasierConfirm from "./CasierConfirm";
+import Succes from "../Succes";
 export default class CasierJudiciaire extends Component {
     state = {
         step: 1,
@@ -67,13 +68,22 @@ export default class CasierJudiciaire extends Component {
                 );
             case 2:
                 return (
-                    <CasierConfirm
+                    <CasierEtape2
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         values={values}
                         handleChange={this.handleChange}
                     />
                 );
+            
+            case 3:
+                return (
+                    <Succes
+                    />
+                );
+            default:
+                break;
         }
+
     }
 }

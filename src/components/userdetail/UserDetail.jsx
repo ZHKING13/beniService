@@ -38,6 +38,7 @@ const UserDetail = ({ nextStep, values, handleChange }) => {
                                 <input
                                     type="text"
                                     className="input-line full-width"
+                                    placeholder="ex:  01/01/1994"
                                     onChange={handleChange("date_naissance")}
                                     value={values.date_naissance}
                                 ></input>
@@ -65,7 +66,7 @@ const UserDetail = ({ nextStep, values, handleChange }) => {
                                     onChange={handleChange("lieu_naissance")}
                                 ></input>
                             </label>
-                            <label>
+                            <label className="input-line full-width">
                                 Lieu d'etablissement de l'acte de naissance
                                 <select
                                     name="lieuDeTablissement"
@@ -102,7 +103,6 @@ const UserDetail = ({ nextStep, values, handleChange }) => {
                                     suivant
                                 </button>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

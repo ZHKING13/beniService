@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Succes from "../Succes";
 import Certificat1 from "./Certificat1";
+import Certificat2 from "./Certificat2";
 
 export default class Certificat extends Component {
     state = {
@@ -65,12 +67,14 @@ export default class Certificat extends Component {
                     handleFileChange={this.handleFileChange}
                 />;
             case 2:
-                <Certificat1
+                <Certificat2
                     nextStep={this.nextStep}
                     values={values}
                     handleChange={this.handleChange}
                     handleFileChange={this.handleFileChange}
                 />;
+            case 2:
+                <Succes />;
 
             default:
                 break;

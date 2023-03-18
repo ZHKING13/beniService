@@ -8,7 +8,7 @@ const Etape2 = ({ nextStep, prevStep, values, handleChange }) => {
                 <div className="window">
                     <form className="content">
                         <div className="welcome"></div>
-                        <div className="subtitle">
+                        <div className="subtitle welcome">
                             merci de bien vouloir remplir le formulaire avec des
                             informations correcte
                         </div>
@@ -31,7 +31,7 @@ const Etape2 = ({ nextStep, prevStep, values, handleChange }) => {
                                     required
                                 ></input>
                             </label>
-                            <label>
+                            <label className="input-line full-width">
                                 sexe
                                 <select
                                     name="Nombre_de_copie"
@@ -42,7 +42,7 @@ const Etape2 = ({ nextStep, prevStep, values, handleChange }) => {
                                 </select>
                             </label>
 
-                            <label>
+                            <label className="input-line full-width">
                                 Nombre de copie
                                 <select
                                     name="Nombre_de_copie"
@@ -70,7 +70,7 @@ const Etape2 = ({ nextStep, prevStep, values, handleChange }) => {
                             </div>
                             <div>
                                 <button onClick={nextStep} className=" btn">
-                                    suivant
+                                    envoyer
                                 </button>
                             </div>
                         </div>

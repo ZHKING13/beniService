@@ -1,6 +1,20 @@
 import React from 'react'
-
-export default function CasierEtape2({nextStep,handleChange,prevStep,values}) {
+import { Livraison } from '../../data';
+import swal from "sweetalert";
+import {Navigate, useNavigate} from 'react-router-dom'
+export default function CasierEtape2({ nextStep, handleChange, prevStep, values }) {
+    const Confirm = async(e) => {
+        e.preventDefault();
+      await swal({
+          title: "Felicitation!",
+          text: "votre demande a bien été envoyé!",
+          icon: "success",
+          button: "ok!",
+          closeOnClickOutside: false,
+      })
+    
+       
+    }
   return (
       <>
           <div className="userDetail-container">
@@ -12,36 +26,22 @@ export default function CasierEtape2({nextStep,handleChange,prevStep,values}) {
                           informations correcte
                       </div>
                       <div className="input-fields">
-                          <label>
-                              Numero de telephone
-                              <input
-                                  type="text"
-                                  placeholder="ex: 0710101010"
-                                  className="input-line full-width"
-                                  required
-                              ></input>
-                          </label>
-                          <label>
-                              Email
-                              <input
-                                  type="text"
-                                  placeholder="ex: jean@gmail.com"
-                                  className="input-line full-width"
-                                  required
-                              ></input>
-                          </label>
-                          <label>
-                              sexe
+                          <label className="input-line full-width">
+                              Lieu de livraison
                               <select
                                   name="Nombre_de_copie"
                                   className="input-line full-width"
                               >
-                                  <option value="Masculin">Masculin</option>
-                                  <option value="Féminin">Féminin</option>
+                                  <option value="">...</option>
+                                  {Livraison.map((item, index) => (
+                                      <option value={item} key={index}>
+                                          {item}
+                                      </option>
+                                  ))}
                               </select>
                           </label>
 
-                          <label>
+                          <label className="input-line full-width">
                               Nombre de copie
                               <select
                                   name="Nombre_de_copie"
@@ -69,7 +69,7 @@ export default function CasierEtape2({nextStep,handleChange,prevStep,values}) {
                           </div>
                           <div>
                               <button onClick={nextStep} className=" btn">
-                                  suivant
+                                  envoyez
                               </button>
                           </div>
                       </div>

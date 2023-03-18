@@ -66,6 +66,14 @@
     color: rgb(28, 47, 221);
 }
 
+.swal-button--confirm {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: rgb(16, 18, 148);
+    font-size: 12px;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width:500px) {
     .team .box-container {
         flex-wrap: wrap;

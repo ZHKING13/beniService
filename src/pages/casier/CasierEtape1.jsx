@@ -14,7 +14,8 @@ export default function CasierEtape1({
                     <div className="content">
                         <div className="welcome">details personnel</div>
                         <div className="subtitle">
-                            Les document demander doivent être en format PDF 
+                            Les document demander doivent être en format PDF,
+                            JPEG ou PNG
                         </div>
                         <div className="input-fields">
                             <label>
@@ -57,7 +58,7 @@ export default function CasierEtape1({
                                     )}
                                 ></input>
                             </label>
-                            <label>
+                            <label >
                                 piece d'un des parents
                                 <input
                                     type="file"
