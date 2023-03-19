@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import { loginUser } from '../../Actions/User';
 import Topbar from '../topbar/Topbar';
 
 function Login() {
@@ -10,12 +9,10 @@ function Login() {
   const dispatch = useDispatch()
   const loginSubmit = (e)=>{
   e.preventDefault();
-  dispatch(loginUser(email,password))
+  
   }
-  const { isAuthenticated} = useSelector((state) => state.user);
   return (
     <div className='login'>
-      {isAuthenticated && <Topbar />} 
       <div className="login-container">
         
         <div className="right"> 

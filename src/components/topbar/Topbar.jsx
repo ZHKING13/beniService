@@ -5,7 +5,6 @@ import "./topbar.css";
 
 function Topbar() {
   const [ShowNave, setShowNave] = useState(true);
-  const { isAuthentificated } = useSelector((state) => state.user);
 
   return (
       <header className="header">

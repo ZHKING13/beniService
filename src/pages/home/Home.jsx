@@ -5,15 +5,10 @@ import Main from "../../components/main/Main";
 import Topbar from "../../components/topbar/Topbar";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { loadUser } from "../../Actions/User";
 import "./home.css";
 import { Link } from "react-router-dom";
 
 function Home() {
-    const dispatch = useDispatch();
-    // useEffect(() => {
-    //   dispatch(loadUser());
-    // });
     return (
         <div id="home">
             <Topbar />
