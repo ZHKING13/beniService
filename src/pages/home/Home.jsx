@@ -1,10 +1,8 @@
 import React from "react";
 import Contacte from "../../components/contacte/Contacte";
-import Footer from "../../components/footer/Footer";
 import Main from "../../components/main/Main";
 import Topbar from "../../components/topbar/Topbar";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 import "./home.css";
 import { Link } from "react-router-dom";
 
