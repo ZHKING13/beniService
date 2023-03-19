@@ -9,21 +9,20 @@ import Extrait from "./pages/extrait/Extrait";
 import CasierJudiciaire from "./pages/casier/CasierJudiciaire";
 
 function App() {
-    const id = "DSN7984";
     return (
         <Router>
             <Routes>
-                <Route path="/" exact element={<Home />} />{" "}
-                <Route path="/User/:id" element={<User />} />{" "}
-                <Route path="/Login" exact element={<Login />} />{" "}
-                <Route path="/Register" exact element={<Register />} />{" "}
-                <Route path="/Demande_Extrait" exact element={<Extrait />} />{" "}
+                <Route path="/" exact element={<Home />} />
+                <Route path="/User/:id" element={<User />} />
+                <Route path="/Login" exact element={<Login />} />
+                <Route path="/Register" exact element={<Register />} />
+                <Route path="/Demande_Extrait" exact element={<Extrait />} />
                 <Route
                     path="/Demande_CasierJudiciaire"
                     exact
                     element={<CasierJudiciaire />}
-                />{" "}
-            </Routes>{" "}
+                />
+            </Routes>
             <Footer />
         </Router>
     );

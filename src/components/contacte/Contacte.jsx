@@ -12,7 +12,7 @@ function Contacte() {
                   <iframe
                       className="map"
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15891.386187622329!2d-3.983919127905554!3d5.286628005146886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eeba32bfbf1b%3A0xa1f41688cd35698f!2sZone%204C%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1641315314126!5m2!1sfr!2sci"
-                      allowfullscreen=""
+                      allowFullScreen=""
                       title="location"
                       loading="lazy"
                   ></iframe>
@@ -36,11 +36,7 @@ function Contacte() {
                           cols="20"
                           rows="10"
                       ></textarea>
-                      <input
-                          type="submit"
-                          value="Envoyer"
-                          className="btn"
-                      />
+                      <input type="submit" value="Envoyer" className="btn" />
                   </form>
               </div>
           </div>

@@ -38,7 +38,7 @@ function Home() {
                         </p>
                         <div id="contact-btn">
                             <Link to="Demande_Extrait">
-                                <a className="btn">demander</a>
+                                <p className="btn">demander</p>
                             </Link>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ function Home() {
 
                         <div id="contact-btn">
                             <Link to="Demande_CasierJudiciaire">
-                                <a className="btn">demander</a>
+                                <p className="btn">demander</p>
                             </Link>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ function Home() {
 
                         <div id="contact-btn">
                             <Link to="Demande_CasierJudiciaire">
-                                <a className="btn">demander</a>
+                                <p className="btn">demander</p>
                             </Link>
                         </div>
                     </div>
