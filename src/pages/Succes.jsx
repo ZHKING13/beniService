@@ -5,7 +5,7 @@ import swal from "sweetalert";
 export default function Succes() {
     const getBack = (e) =>
         (window.location.href =
-            "https://17de-2c0f-ecf0-618-f700-f9cc-5e29-7e1e-12f.ngrok.io/");
+            "https://beniservice.up.railway.app/");
     useEffect(() => {
         swal({
             title: "Felicitation!",
