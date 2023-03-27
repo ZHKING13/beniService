@@ -35,7 +35,7 @@ export default function CasierEtape1({
                                     placeholder="ex: 0707101010"
                                     className="input-line full-width"
                                     value={values.numero}
-                                    onChange={handleChange("prenom")}
+                                    onChange={handleChange("numero")}
                                 ></input>
                             </label>
                             <label>

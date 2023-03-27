@@ -14,12 +14,12 @@ function Home() {
             <div className="about">
                 <h2>Qui somme nous?</h2>
                 <p>
-                    Lorem i Voluptatibus magnam veric quo et ad, corrupti veam
-                    inventore culpa error mollitia, recusandae possimus facilis.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reiciendis in sequi dolorem eligendi dolores temporibus
-                    dolore atque alias consequuntur fuga odio mollitia suscipit
-                    natus minima consequatur ducimus possimus, odit pariatur?
+                    Béni_Service est un service mis en place pour aider la
+                    population ivoirienne dans leur demarche administrative Il
+                    est donc désormais facile de commander ses documents
+                    administratifs sans se déplacer grâce à Béni_Service et sa
+                    plateforme en ligne. Nous garantissons la sécurité des
+                    échanges et de votre identité sur internet
                 </p>
             </div>
             <h1 id="service" className="heading">
@@ -31,8 +31,11 @@ function Home() {
                         <h2>Extrait de naissance</h2>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nisi dicta dolore qu
+                            Faîtes vos demandes d'extrait d'acte de naissance et
+                            l'obtenir en Cinq (05) jours ouvrés maximum lorsque
+                            la demande se fait dans une Mairie et en Dix (10)
+                            jours ouvrés maximum lorsque la demande se fait dans
+                            une Sous-Préfecture .
                         </p>
                         <div id="contact-btn">
                             <Link to="Demande_Extrait">
@@ -44,8 +47,8 @@ function Home() {
                         <h2>certificat de nationalité</h2>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nisi dicta dolore qu
+                            Faîtes vos demandes de certificat de nationalité et
+                            l'obtenir en Dix (10) jours ouvrés maximum.
                         </p>
 
                         <div id="contact-btn">
@@ -58,8 +61,8 @@ function Home() {
                         <h2>casier judiciaire</h2>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Nisi dicta dolore qu
+                            Faîtes vos demandes de casier judiciaire et
+                            obtener le en Dix (10) jours ouvrés maximum.
                         </p>
 
                         <div id="contact-btn">

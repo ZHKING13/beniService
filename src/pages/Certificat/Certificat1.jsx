@@ -28,7 +28,7 @@ export default function Certificat1({nexStep,prevStep,values}) {
                                   placeholder="ex: 0707101010"
                                   className="input-line full-width"
                                   value={values.numero}
-                                  onChange={handleChange("prenom")}
+                                  onChange={handleChange("numero")}
                               ></input>
                           </label>
                           <label>
