@@ -27,6 +27,7 @@ function generateUniqueId() {
         ref_command: generateUniqueId(),
         ipn_url:
             "https://beniserviceserver-production.up.railway.app/api/v1/demande/extrait",
+        env: process.env.REACT_APP_ENV,
     };
     const headers = {
         Accept: "application/json",
