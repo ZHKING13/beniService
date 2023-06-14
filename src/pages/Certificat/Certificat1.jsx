@@ -1,10 +1,31 @@
 import React from 'react'
+import {  message } from "antd";
 
-export default function Certificat1({nexStep,prevStep,values}) {
+export default function Certificat1({nextStep,prevStep,values,handleChange,handleFileChange}) {
+    const [messageApi, contextHolder] = message.useMessage();
+    const validate = () => {
+        if (
+            !values.nom ||
+            !values.numero ||
+            !values.extraitDeNaissane ||
+            !values.pieceParent ||
+            !values.email
+        ) {
+            messageApi.open({
+                type: "warning",
+                content: "merci de remplir tout les champs du formulaire",
+            });
+            console.log(values)
+            return;
+        }
+        nextStep();
+    };
+
   return (
       <>
           <div className="userDetail-container">
               <div className="window">
+                  {contextHolder}
                   <div className="content">
                       <div className="welcome">details personnel</div>
                       <div className="subtitle">
@@ -36,7 +57,7 @@ export default function Certificat1({nexStep,prevStep,values}) {
                               <input
                                   type="text"
                                   className="input-line full-width"
-                                  onChange={handleChange("date_naissance")}
+                                  onChange={handleChange("email")}
                                   value={values.date_naissance}
                                   placeholder="ex: Jean@gmail.com"
                               ></input>
@@ -62,7 +83,7 @@ export default function Certificat1({nexStep,prevStep,values}) {
                       </div>
                       <div className="control">
                           <div>
-                              <button onClick={nextStep} className=" btn">
+                              <button onClick={validate} className=" btn">
                                   suivant
                               </button>
                           </div>

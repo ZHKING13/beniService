@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Succes from "../Succes";
+import axios from "axios"
 import Certificat1 from "./Certificat1";
 import Certificat2 from "./Certificat2";
 
@@ -12,6 +13,7 @@ export default class Certificat extends Component {
         nombreCopie: "",
         extraitDeNaissane: null,
         pieceParent: null,
+        Lieu_de_livraison: "",
     };
 
     prevStep = () => {
@@ -28,10 +30,6 @@ export default class Certificat extends Component {
     };
     handleFileChange = (input) => async (e) => {
         const file = e.target.files[0];
-        const option = {
-            mode: "no-cors",
-            credentials: "omit",
-        };
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "beni_service");
@@ -49,6 +47,7 @@ export default class Certificat extends Component {
             extraitDeNaissane,
             pieceParent,
             nombreCopie,
+            Lieu_de_livraison,
         } = this.state;
         const values = {
             email,
@@ -57,25 +56,29 @@ export default class Certificat extends Component {
             extraitDeNaissane,
             pieceParent,
             nombreCopie,
+            Lieu_de_livraison,
         };
         switch (step) {
             case 1:
-                <Certificat1
-                    nextStep={this.nextStep}
+               return (
+                   <Certificat1
+                       nextStep={this.nextStep}
+                       values={values}
+                       handleChange={this.handleChange}
+                       handleFileChange={this.handleFileChange}
+                   />
+               );
+            case 2:
+                return (
+                   <Certificat2
+                        nextStep={this.nextStep}
+                        prevStep={this.prevStep}
                     values={values}
                     handleChange={this.handleChange}
                     handleFileChange={this.handleFileChange}
-                />;
-            case 2:
-                <Certificat2
-                    nextStep={this.nextStep}
-                    values={values}
-                    handleChange={this.handleChange}
-                    handleFileChange={this.handleFileChange}
-                />;
-            case 2:
-                <Succes />;
-
+                />
+               )
+            
             default:
                 break;
         }

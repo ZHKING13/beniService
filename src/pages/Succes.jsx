@@ -14,6 +14,9 @@ export default function Succes() {
             button: "okay",
             closeOnClickOutside: false,
         });
+     const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    console.log(token);
     }, []);
 
     return (

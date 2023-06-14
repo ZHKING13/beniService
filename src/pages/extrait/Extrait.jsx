@@ -12,7 +12,7 @@ class Extrait extends Component {
         lieu_naissance: "",
         numero_Acte_naissance: "",
         lieuDeTablissement: "",
-        sexe: "",
+        sexe: "masculin",
         email: "",
         nmbreCopie: "",
         lieu_Livraison: "",
@@ -75,11 +75,11 @@ class Extrait extends Component {
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
-                        value={values}
+                        values={values}
                     />
                 );
             case 3:
-                return (<Succes />)
+                return <Succes />;
 
             default:
                 break;

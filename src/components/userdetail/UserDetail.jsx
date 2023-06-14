@@ -1,11 +1,32 @@
 import React from "react";
 import { extraitNaissance } from "../../data";
+import { message } from "antd";
 import "./userDetail.css";
 const UserDetail = ({ nextStep, values, handleChange }) => {
+     const [messageApi, contextHolder] = message.useMessage();
+     const validate = () => {
+         if (
+             !values.nom ||
+             !values.prenom ||
+             !values.date_naissance ||
+             !values.numero_Acte_naissance ||
+             !values.lieu_naissance ||
+             !values.lieuDeTablissement
+         ) {
+             messageApi.open({
+                 type: "warning",
+                 content: "merci de remplir tout les champs du formulaire",
+             });
+             console.log(values);
+             return;
+         }
+         nextStep();
+     };
     return (
         <>
             <div className="userDetail-container">
                 <div className="window">
+                    {contextHolder}
                     <div className="content">
                         <div className="welcome">details personnel</div>
                         <div className="subtitle">
@@ -74,7 +95,7 @@ const UserDetail = ({ nextStep, values, handleChange }) => {
                                     onChange={handleChange(
                                         "lieuDeTablissement"
                                     )}
-                                    value={values.lieuDeTablissememnt}
+                                    value={values.lieuDeTablissement}
                                 >
                                     <option value=""></option>
                                     {extraitNaissance.map((item, index) => (
@@ -99,7 +120,7 @@ const UserDetail = ({ nextStep, values, handleChange }) => {
                         </div>
                         <div className="control">
                             <div>
-                                <button onClick={nextStep} className=" btn">
+                                <button onClick={validate} className=" btn">
                                     suivant
                                 </button>
                             </div>

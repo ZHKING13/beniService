@@ -52,7 +52,7 @@ function Home() {
                         </p>
 
                         <div id="contact-btn">
-                            <Link to="Demande_CasierJudiciaire">
+                            <Link to="Demande_Certificat">
                                 <p className="btn">demander</p>
                             </Link>
                         </div>
@@ -61,8 +61,8 @@ function Home() {
                         <h2>casier judiciaire</h2>
 
                         <p>
-                            Faîtes vos demandes de casier judiciaire et
-                            obtener le en Dix (10) jours ouvrés maximum.
+                            Faîtes vos demandes de casier judiciaire et obtener
+                            le en Dix (10) jours ouvrés maximum.
                         </p>
 
                         <div id="contact-btn">

@@ -1,15 +1,37 @@
 import React from "react";
 import { extraitNaissance } from "../../data";
+import { message } from "antd";
+import InvoiceButton from "../../components/Checkout";
 
 export default function CasierEtape1({
     nextStep,
     handleChange,
     handleFileChange,
     values,
-}) {
+}) { 
+    // validate
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const validate = () => {
+        if (
+            !values.nom ||
+            !values.numero ||
+            !values.extraitDeNaissane ||
+            !values.pieceParent
+        ) {
+           messageApi.open({
+               type: "warning",
+               content: "merci de remplir tout les champs du formulaire",
+           });
+            return 
+        }
+        nextStep();
+    }
     return (
         <>
+            {contextHolder}
             <div className="userDetail-container">
+                {contextHolder}
                 <div className="window">
                     <div className="content">
                         <div className="welcome">details personnel</div>
@@ -43,8 +65,8 @@ export default function CasierEtape1({
                                 <input
                                     type="text"
                                     className="input-line full-width"
-                                    onChange={handleChange("date_naissance")}
-                                    value={values.date_naissance}
+                                    onChange={handleChange("email")}
+                                    value={values.email}
                                     placeholder="ex: Jean@gmail.com"
                                 ></input>
                             </label>
@@ -58,7 +80,7 @@ export default function CasierEtape1({
                                     )}
                                 ></input>
                             </label>
-                            <label >
+                            <label>
                                 piece d'un des parents
                                 <input
                                     type="file"
@@ -69,7 +91,7 @@ export default function CasierEtape1({
                         </div>
                         <div className="control">
                             <div>
-                                <button onClick={nextStep} className=" btn">
+                                <button onClick={validate} className=" btn">
                                     suivant
                                 </button>
                             </div>

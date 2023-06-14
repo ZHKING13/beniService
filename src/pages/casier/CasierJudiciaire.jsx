@@ -11,6 +11,7 @@ export default class CasierJudiciaire extends Component {
         numero: "",
         email: "",
         nombreCopie: "",
+        Lieu_de_livraison:"",
         extraitDeNaissane: '',
         pieceParent: '',
     };
@@ -32,11 +33,11 @@ export default class CasierJudiciaire extends Component {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", "beni_service");
-        axios
+     await   axios
             .post("https://api.cloudinary.com/v1_1/zetrey-inc/upload", formData)
             .then((res) => this.setState({ [input]: res.data.secure_url }));
        
-        console.log(this.state[input]);
+        console.log(this.state.pieceParent);
     };
     render() {
         const { step } = this.state;
@@ -47,6 +48,7 @@ export default class CasierJudiciaire extends Component {
             extraitDeNaissane,
             pieceParent,
             nombreCopie,
+            Lieu_de_livraison,
         } = this.state;
         const values = {
             email,
@@ -55,6 +57,7 @@ export default class CasierJudiciaire extends Component {
             extraitDeNaissane,
             pieceParent,
             nombreCopie,
+            Lieu_de_livraison,
         };
         switch (step) {
             case 1:
