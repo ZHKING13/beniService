@@ -61,7 +61,7 @@ export default function Certificat2({
             return;
         }
         console.log(values);
-        // handleSubmit();
+        handleSubmit();
     };
 
     return (
