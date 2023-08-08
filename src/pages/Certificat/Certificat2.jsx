@@ -57,7 +57,7 @@ export default function Certificat2({
         if (!values.Lieu_de_livraison || !values.nombreCopie) {
             messageApi.open({
                 type: "warning",
-                content: "merci de remplir tout les champs du formulaire",
+                content: "merci de remplir correctement les champs du formulaire",
             });
             return;
         }
