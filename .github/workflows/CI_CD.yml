@@ -1,11 +1,11 @@
 name: Node CI-CD for build, test, and deploy
 on:
   push:
-    branches: 
+    branches:
       - master
       - production
   pull_request:
-    branches: 
+    branches:
       - production
 jobs:
   install:
@@ -17,12 +17,13 @@ jobs:
         with:
           node-version: 16.15.1
       - run: npm ci
+
   build:
     needs: install
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 16.x]
+        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use node ${{ matrix.node-version }}
@@ -31,32 +32,33 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/production'
     steps:
-    - uses: actions/checkout@v3
-      with:
-        python-version: 3.9
-    - name: Cofig AWS Cred
-      run: |
-        pip install awscli
-        aws configure set region ap-southeast-2
-        aws configure set output json
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }} 
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
-    - name: deploy with s3 sync and Invalidate CloudFront cache
-      run: |
-        npm install
-        if [ ${{ github.ref }} = 'refs/heads/master' ]
-        then
-         npm run build
-         aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME_STAGING }}/
-         aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_STAGING }} --paths "/*"
-        elif [ ${{ github.ref }} = 'refs/heads/production' ]
-        then
-           npm run build
-           aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME_PROD }}/ 
-           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PROD }} --paths "/*"
-        fi
+      - uses: actions/checkout@v3
+        with:
+          python-version: 3.9
+      - name: Cofig AWS Cred
+        run: |
+          pip install awscli
+          aws configure set region ap-southeast-2
+          aws configure set output json
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }} 
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_KEY }}
+      - name: deploy with s3 sync and Invalidate CloudFront cache
+        run: |
+          npm install
+          if [ ${{ github.ref }} = 'refs/heads/master' ]
+          then
+            npm run build
+            aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME_STAGING }}/
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_STAGING }} --paths "/*"
+          elif [ ${{ github.ref }} = 'refs/heads/production' ]
+          then
+            npm run build
+            aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME_PROD }}/
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PROD }} --paths "/*"
+          fi
