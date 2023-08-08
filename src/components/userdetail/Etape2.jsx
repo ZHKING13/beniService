@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { extraitNaissance } from "../../data";
 import "./userDetail.css";
 import { message } from "antd";
 import { Livraison } from "../../data";

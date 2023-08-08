@@ -137,6 +137,7 @@ export default function Certificat2({
                                     data={values}
                                     handleSubmit={validate}
                                     disable={disable}
+                                    setDisabled={setDisabled}
                                 />
                             </div>
                         </div>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Succes from "../Succes";
 import axios from "axios"
 import Certificat1 from "./Certificat1";
 import Certificat2 from "./Certificat2";

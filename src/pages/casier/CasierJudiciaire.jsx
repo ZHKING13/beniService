@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CasierEtape1 from "./CasierEtape1";
 import CasierEtape2 from "./CasierEtape2";
 import axios from "axios";
-import CasierConfirm from "./CasierConfirm";
 import Succes from "../Succes";
 export default class CasierJudiciaire extends Component {
     state = {

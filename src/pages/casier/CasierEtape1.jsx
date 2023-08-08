@@ -1,7 +1,5 @@
 import React from "react";
-import { extraitNaissance } from "../../data";
 import { message } from "antd";
-import InvoiceButton from "../../components/Checkout";
 
 export default function CasierEtape1({
     nextStep,
