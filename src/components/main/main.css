@@ -1,6 +1,6 @@
 .home {
     min-height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7)), url(https://source.unsplash.com/nYgy58eb9aw/) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .7)), url(https://img.freepik.com/photos-gratuite/homme-se-presentant-aux-employeurs-lors-entretien-embauche-au-bureau_23-2149034546.jpg?w=1060&t=st=1691684916~exp=1691685516~hmac=e270a147eb0db0e6012fa40943eef120bdeafa13d5ced18cf84c74164925df3a) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
