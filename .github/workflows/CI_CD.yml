@@ -53,6 +53,8 @@ jobs:
           npm install
           if [ ${{ github.ref }} = 'refs/heads/master' ]
           then
+          export REACT_APP_API_SECRET=${{ secrets.REACT_APP_API_SECRET }}
+          export REACT_APP_API_KEY=${{ secrets.REACT_APP_API_KEY }}
             npm run build
             aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME_STAGING }}/
             aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_STAGING }} --paths "/*"
